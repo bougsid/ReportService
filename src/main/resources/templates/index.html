@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="UTF-8" />
+<title>Reporting</title>
+</head>
+
+<body>
+	<h1>Welcome</h1>
+	<form method="post" th:action="@{/process}" th:object="${dataForm}"  enctype="multipart/form-data">
+		<input type="file" name="xmlFile" />
+		<input type="submit" value="Send" />
+	</form>
+	
+	<a th:href="@{|/download/${fileName}|}"><span th:text="${fileName}"></span></a>
+	
+</body>
+
+</html>
